@@ -1,8 +1,11 @@
-package com.darksoft.sceii
+package com.darksoft.sceii.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.darksoft.sceii.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
