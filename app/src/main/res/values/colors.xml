@@ -9,10 +9,11 @@
     <color name="white">#FFFFFFFF</color>
 
 
-    <color name="color_primary">#5E97F6</color>
+    <color name="color_primary">#007ACC</color>
     <color name="background_app">#1E1E1E</color>
     <color name="background_sub">#252526</color>
     <color name="background_item">#2D2D30</color>
+    <color name="background_outline">#7D7E81</color>
 
     <color name="title_text">#EBEDEC</color>
     <color name="subtitle_text">#8F9091</color>
