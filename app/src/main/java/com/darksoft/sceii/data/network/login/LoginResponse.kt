@@ -16,7 +16,7 @@ data class Miembro(
     @SerializedName("nombre") val nombre: String,
     @SerializedName("apellidop") val apellidoPaterno: String,
     @SerializedName("apellidom") val apellidoMaterno: String,
-    @SerializedName("celular") val celular: Long,
+    @SerializedName("celular") val celular: Int,
     @SerializedName("fechnac") val fechaNacimiento: String,
     @SerializedName("fechinsc") val fechaInscripcion: String,
     @SerializedName("activo") val activo: Boolean,
@@ -28,5 +28,17 @@ data class Miembro(
 
 // Mapeamos los datos para la capa domain (tiene que tener el mismo nombre de la clase)
 fun LoginResponse.toDomain() = LoginModel(
-    token = this.token
+    token = this.token,
+    ru = this.miembro.ru,
+    ci = this.miembro.ci,
+    email = this.miembro.email,
+    nombre = this.miembro.nombre,
+    apellidop = this.miembro.apellidoPaterno,
+    apellidom = this.miembro.apellidoMaterno,
+    celular = this.miembro.celular,
+    fechnac = this.miembro.fechaNacimiento,
+    fechinsc = this.miembro.fechaInscripcion,
+    activo = this.miembro.activo,
+    foto = this.miembro.foto,
+    id_rol = this.miembro.idRol
 )

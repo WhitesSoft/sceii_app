@@ -13,17 +13,19 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/ivOpenDrawer"
-            android:layout_width="56dp"
-            android:layout_height="?actionBarSize"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/round_toolbar"
-            android:contentDescription="@string/app_name"
-            android:padding="12dp"
-            android:src="@drawable/ic_menu"
-            app:tint="@color/title_text" />
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.NavigationDrawer.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/background_app"
+                app:popupTheme="@style/Theme.NavigationDrawer.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <fragment
             android:id="@+id/fragmentContainerView"

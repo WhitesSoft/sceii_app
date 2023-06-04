@@ -34,6 +34,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun initUI() {
 
+        // Setup toolbar
+        setSupportActionBar(binding.toolbar)
+
         // Setup navigation drawer
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -42,15 +45,11 @@ class MainActivity : AppCompatActivity() {
         drawerLayout.setScrimColor(Color.TRANSPARENT)
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.homeFragment, R.id.membersFragment
+                R.id.homeFragment, R.id.profileFragment, R.id.membersFragment
             ), drawerLayout
         )
+        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-        // Abrimos el drawer
-        binding.ivOpenDrawer.setOnClickListener {
-            drawerLayout.open()
-        }
 
     }
 

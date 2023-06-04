@@ -1,4 +1,4 @@
-package com.darksoft.sceii.ui.fragments.members
+package com.darksoft.sceii.ui.fragments.profile
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import com.darksoft.sceii.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MembersFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +21,7 @@ class MembersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_members, container, false)
+        return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
 }
