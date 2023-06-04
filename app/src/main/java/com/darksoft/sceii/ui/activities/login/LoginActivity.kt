@@ -14,6 +14,7 @@ import com.darksoft.sceii.R
 import com.darksoft.sceii.databinding.ActivityLoginBinding
 import com.darksoft.sceii.ui.MainActivity
 import com.darksoft.sceii.ui.activities.login.model.LoginUIState
+import com.darksoft.sceii.ui.activities.splash_screen.model.SplashScreenUIState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
