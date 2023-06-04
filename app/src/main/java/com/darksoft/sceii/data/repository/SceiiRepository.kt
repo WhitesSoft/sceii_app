@@ -9,10 +9,6 @@ import com.darksoft.sceii.domain.login.dto.LoginDto
 import com.darksoft.sceii.domain.login.model.LoginModel
 import javax.inject.Inject
 
-/*
-*
-* */
-
 class SceiiRepository @Inject constructor(private val sceiiApi: SceiiApi) {
 
     suspend fun postLogin(loginDto: LoginDto): ResultType<LoginModel> {

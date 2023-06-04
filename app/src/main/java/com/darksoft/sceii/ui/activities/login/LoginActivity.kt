@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -71,7 +70,11 @@ class LoginActivity : AppCompatActivity() {
                                 // Mostrar la informacion
                                 binding.loading.isVisible = false
                                 binding.btnIniciarSesion.isVisible = true
-                                Log.i("token", "token: ${uiState.loginModel.token}")
+                                Log.i("token", "token: ${uiState.loginModel.toString()} ")
+
+                                // Guardar datos en dataStore
+                                viewModel.saveUserData(uiState.loginModel)
+
                                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
                                 startActivity(intent)
                                 finish()
