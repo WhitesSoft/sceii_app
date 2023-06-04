@@ -84,12 +84,15 @@
                 app:backgroundTint="@color/color_primary"
                 app:cornerRadius="8dp" />
 
-            <ProgressBar
+            <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/loading"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:visibility="gone"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading"
                 tools:visibility="visible" />
 
         </FrameLayout>

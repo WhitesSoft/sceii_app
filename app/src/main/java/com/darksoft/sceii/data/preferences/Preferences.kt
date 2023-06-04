@@ -14,8 +14,21 @@ private val Context.dataStore by preferencesDataStore(name = PREFERENCES_NAME)
 class Preferences @Inject constructor(private val context: Context) {
 
     suspend fun saveDataUser(key: String, loginModel: LoginModel){
-        context.dataStore.edit {
-            it[stringPreferencesKey(key)] = loginModel.toString()
+        val serializedValue = "${loginModel.token}, " +
+                "${loginModel.ru}, " +
+                "${loginModel.ci}, " +
+                "${loginModel.email}, " +
+                "${loginModel.nombre}, " +
+                "${loginModel.apellidop}, " +
+                "${loginModel.apellidom}, " +
+                "${loginModel.celular}, " +
+                "${loginModel.fechnac}, " +
+                "${loginModel.fechinsc}, " +
+                "${loginModel.activo}, " +
+                "${loginModel.foto}, " +
+                "${loginModel.id_rol}"
+        context.dataStore.edit { preferences ->
+            preferences[stringPreferencesKey(key)] = serializedValue
         }
     }
 
@@ -23,17 +36,15 @@ class Preferences @Inject constructor(private val context: Context) {
         val preferencesKey = stringPreferencesKey(key)
         val preferences = context.dataStore.data.first()
         val serializedValue = preferences[preferencesKey]
-
         return if (serializedValue != null) {
-            val loginModel = deserializeLoginModel(serializedValue)
-            loginModel
+            deserializeLoginModel(serializedValue)
         } else {
             null
         }
     }
 
     private fun deserializeLoginModel(serializedValue: String): LoginModel {
-        val values = serializedValue.split(",")
+        val values = serializedValue.split(", ")
         return LoginModel(
             token = values[0],
             ru = values[1].toInt(),
